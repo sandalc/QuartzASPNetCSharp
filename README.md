@@ -7,6 +7,8 @@ Bunun icin; JobListener ve chaining (zincirleme) kombinasyonu bereber implemente
 
 Boylelikle isler sirali calistrilip, ayni zamanda her isin baslangic, tamamlanma ve hata durumlari JobListener ile izlenip loglanabilmekte (Console).
 
-Eger Quartz.NET ile belirli bir aralikla (örnegin her 3 saatte bir) bir isin tetiklenmesini istiyorsaniz, bunun için bir zamanlayici (trigger) olusturmaniz gerekecek. 
+Eger Quartz.NET ile belirli bir aralikla (örnegin her 3 saatte bir) bir isin tetiklenmesini istiyorsaniz, bunun için bir zamanlayici (trigger) olusturmaniz gerekecek. Prodede bunlara ait uygulamada bulunmakta.
+
+Şuan Joblar her 1 dakikada bir belirtilen sira ile calisabilecek sekilde ayarlabmiş bulunmakta.
 
 Bu zamanlayici, TriggerBuilder kullanarak belirli bir aralikta çalisacak sekilde yapilandirabilirsiniz
