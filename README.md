@@ -1,4 +1,5 @@
 # QuartzASPNetCSharp
+# DE
 
 Im Projekt wurde eine ASP.NET Core-Anwendung entwickelt, um die Ausführung von Aufgaben in einer bestimmten Reihenfolge mit Quartz.NET zu ermöglichen.
 
@@ -14,9 +15,8 @@ Derzeit sind die Jobs so konfiguriert, dass sie alle 1 Minute in der festgelegte
 
 Dieser Zeitgeber kann mithilfe des TriggerBuilder so konfiguriert werden, dass er in einem bestimmten Intervall ausgeführt wird.
 
-
+# TR
 Projede Quartz.NET kullanarak Islerin sirali calismasini  saglamak icim bir ASP.NET Core uygulamasi uzerinde gelistirme yapildi.
-
 
 Projededeki Senaryoda 3 farkli is/Job (DbUpdateTask, ElastichIndexUpdateTask, IliskiTask) sirali sekilde calistiriliyor.
 Zincir 1.Job ile basliyor ve her Job tamanlandiktan sonra kendisinden sonra calistirilmasi gereken Job i belirliyor .
