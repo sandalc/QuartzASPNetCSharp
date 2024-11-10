@@ -1,19 +1,19 @@
 # QuartzASPNetCSharp
 # DE
 
-Im Projekt wurde eine ASP.NET Core-Anwendung entwickelt, um die Ausführung von Aufgaben in einer bestimmten Reihenfolge mit Quartz.NET zu ermöglichen.
+Im Projekt wurde eine ASP.NET Core Anwendung entwickelt, um die Reihenfolge der Ausführung von Aufgaben mithilfe von Quartz.NET sicherzustellen.
 
-Im Szenario des Projekts werden drei verschiedene Aufgaben/Jobs (DbUpdateTask, ElastichIndexUpdateTask, IliskiTask) nacheinander ausgeführt. Die Kette beginnt mit der ersten Aufgabe und nach Abschluss jeder Aufgabe wird die nächste zu ausführende Aufgabe bestimmt.
+Im Szenario des Projekts werden drei verschiedene Aufgaben/Jobs (DbUpdateTask, ElastichIndexUpdateTask, IliskiTask) nacheinander ausgeführt. Die Kette beginnt mit dem ersten Job, und nach Abschluss eines Jobs wird der nachfolgende Job festgelegt.
 
-Zu diesem Zweck wurden der JobListener und die Chaining-Mechanismen gemeinsam implementiert.
+Für dieses Szenario wurde eine Kombination aus JobListener und Chaining (Verkettung) implementiert.
 
-Auf diese Weise werden die Aufgaben in der richtigen Reihenfolge ausgeführt, und der Beginn, das Ende sowie etwaige Fehlerzustände jeder Aufgabe können mit dem JobListener überwacht und in der Konsole (Log) protokolliert werden.
+Auf diese Weise werden die Aufgaben in der richtigen Reihenfolge ausgeführt, und gleichzeitig können der Beginn, das Ende sowie Fehlerzustände jeder Aufgabe über den JobListener überwacht und im Log (Konsole) erfasst werden.
 
-Falls Sie mit Quartz.NET eine Aufgabe in regelmäßigen Abständen (zum Beispiel alle 3 Stunden) auslösen möchten, müssen Sie einen Trigger erstellen. Auch in diesem Bereich wurde im Projekt eine entsprechende Entwicklung durchgeführt.
+Wenn Sie mit Quartz.NET eine Aufgabe in regelmäßigen Abständen (z. B. alle 3 Stunden) auslösen möchten, müssen Sie dafür einen Timer (Trigger) erstellen. Im Projekt finden sich Implementierungen für diesen Zweck.
 
-Derzeit sind die Aufgaben so konfiguriert, dass sie jede Minute in der festgelegten Reihenfolge ausgeführt werden.
+Dieser Timer kann so konfiguriert werden, dass er in festgelegten Abständen mithilfe des TriggerBuilders ausgeführt wird.
 
-Dieser Trigger kann mit dem TriggerBuilder so konfiguriert werden, dass er in einem bestimmten Intervall ausgeführt wird.
+Derzeit ist der erste Job, der der Hauptaufrufpunkt der miteinander verbundenen Jobkette ist, so eingestellt, dass er alle 1 Minute ausgelöst wird. Wie zu erkennen ist, wird der erste Job der geplanten Kette ausgelöst, und die anderen Jobs werden erstellt und warten auf ihren Aufruf.
 # TR
 Projede Quartz.NET kullanarak Islerin sirali calismasini  saglamak icin bir ASP.NET Core uygulamasi uzerinde gelistirme yapildi.
 
@@ -26,6 +26,7 @@ Boylelikle isler sirali calistrilip, ayni zamanda her isin baslangic, tamamlanma
 
 Eger Quartz.NET ile belirli bir aralikla (örnegin her 3 saatte bir) bir isin tetiklenmesini istiyorsaniz, bunun için bir zamanlayici (trigger) olusturmaniz gerekecek. Projede bu konuya ait uygulanmis kodlar bulunmakta.
 
-Şuan Joblar her 1 dakikada bir belirtilen sira ile calisabilecek sekilde ayarlanmis bulunmakta.
-
 Bu zamanlayici, TriggerBuilder kullanarak belirli bir aralikta çalisacak sekilde yapilandirabilirsiniz
+
+Hali hazirda; birbirine bagli zincir Joblarin ilk ana giris noktasi olan 1. Job her 1 dakikada bir tetiklenecek şekilde ayarlanmiş bulunmakta. Fark edileceği uzere; aslinda zamanlanan zincirin basindaki ilk Job, diger Job lar olusturulmakta ve kendilerinin cagrilmasini beklemekte.
+
