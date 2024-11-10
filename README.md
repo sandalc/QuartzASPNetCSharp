@@ -9,6 +9,6 @@ Boylelikle isler sirali calistrilip, ayni zamanda her isin baslangic, tamamlanma
 
 Eger Quartz.NET ile belirli bir aralikla (örnegin her 3 saatte bir) bir isin tetiklenmesini istiyorsaniz, bunun için bir zamanlayici (trigger) olusturmaniz gerekecek. Prodede bunlara ait uygulamada bulunmakta.
 
-Şuan Joblar her 1 dakikada bir belirtilen sira ile calisabilecek sekilde ayarlabmiş bulunmakta.
+Şuan Joblar her 1 dakikada bir belirtilen sira ile calisabilecek sekilde ayarlnbmiş bulunmakta.
 
 Bu zamanlayici, TriggerBuilder kullanarak belirli bir aralikta çalisacak sekilde yapilandirabilirsiniz
