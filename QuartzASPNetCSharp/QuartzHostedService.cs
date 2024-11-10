@@ -22,8 +22,6 @@
         {
             _scheduler = await _schedulerFactory.GetScheduler(cancellationToken);
 
-            _scheduler = await _schedulerFactory.GetScheduler(cancellationToken);
-
             if (_scheduler == null)
             {
                 throw new InvalidOperationException("Scheduler başarıyla başlatılamadı.");
