@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuartzJobListenerAndChaining", "QuartzASPNetCSharp\QuartzJobListenerAndChaining.csproj", "{DE4E8732-A200-480C-8B73-5409AD247972}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE4E8732-A200-480C-8B73-5409AD247972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4E8732-A200-480C-8B73-5409AD247972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4E8732-A200-480C-8B73-5409AD247972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4E8732-A200-480C-8B73-5409AD247972}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1F7488B-8B53-4A93-B60D-DD8C168BFBD5}
+	EndGlobalSection
+EndGlobal
