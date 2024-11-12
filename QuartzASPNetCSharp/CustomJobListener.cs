@@ -37,22 +37,24 @@
         {
             var jobName = context.JobDetail.Key.Name;
 
-            if (jobException == null)
-            {
-                Console.WriteLine($"{jobName} başarıyla tamamlandı. {DateTime.Now}");
-                if (jobName == "DbUpdateTask")
-                {
-                    await _scheduler.TriggerJob(new JobKey("ElastichIndexUpdateTask"), cancellationToken);
-                }
-                else if (jobName == "ElastichIndexUpdateTask")
-                {
-                    await _scheduler.TriggerJob(new JobKey("IliskiTask"), cancellationToken);
-                }
-                else if (jobName == "IliskiTask")
-                {
-                    Console.WriteLine($"Tüm işler başarıyla tamamlandı.{DateTime.Now}");
+    if (jobException == null)
+ {
+     Console.WriteLine($"{jobName} başarıyla tamamlandı. {DateTime.Now}");
+     
+     // Mevcut Task tamamlandi, kendisinden sonra calismasi gereken Task tanimlanmis mi ? 
+     if (jobName == nameof(DbUpdateTask))
+     {
+         await _scheduler.TriggerJob(new JobKey(nameof(ElastichIndexUpdateTask)), cancellationToken);
+     }
+     else if (jobName == nameof(ElastichIndexUpdateTask))
+     {
+         await _scheduler.TriggerJob(new JobKey(nameof(IliskiTask)), cancellationToken);
+     }
+     else if (jobName == nameof(IliskiTask))
+     {
+         Console.WriteLine($"Tüm işler başarıyla tamamlandı.{DateTime.Now}\n\n");
 
-                }
+     }
             }
             else
             {
